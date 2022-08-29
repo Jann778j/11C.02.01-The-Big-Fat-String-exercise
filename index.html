@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string something</title>
+    <style>
+      * {
+        padding: 5px;
+      }
+      #output {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="input" id="input_text" />
+    <div id="box"></div>
+
+    <select name="selectfunction" id="selectfunction">
+      <option value="first_character_uppercase_rest_lowercase">
+        Make the first character in a name uppercase, and the rest lowercase
+      </option>
+      <option value="Find_first_name">Find the first name</option>
+      <option value="Find_length_firstname">
+        Find the length of the first name
+      </option>
+      <option value="Find_middlename_startandend_position">
+        Find the middle name start and end position, and the middle name itself
+        in a full name string
+      </option>
+      <option value="Check_if_filename_png_or_jpg">
+        Check if a filename is .png or .jpg
+      </option>
+      <option value="Hide_password">
+        Hide a password with the correct number of *s
+      </option>
+      <option value="Make_third_character_uppercase">
+        Make the third character uppercase
+      </option>
+      <option value="Make_character_uppercase">
+        Make a character uppercase, if it follows a space or a hyphen
+      </option>
+    </select>
+
+    <button id="generate">generate</button>
+
+    <p id="output"></p>
+
+    <script src="java.js"></script>
+  </body>
+</html>
