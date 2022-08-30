@@ -9,6 +9,7 @@ function start() {
 function showOutput() {
   let input = document.querySelector("#input_text").value;
   let selection = document.querySelector("#selectfunction").value;
+  let output = document.querySelector("#output");
 
   console.log(`${input}`);
   // den virker - done
@@ -22,14 +23,23 @@ function showOutput() {
     let firstname = input.split(" ", 1);
     output.innerHTML = `${firstname}`;
   }
-  // den virker ikke - giver op
+  // den virker - done
   else if (selection == "Find_length_firstname") {
-    const firstSpace = input.indexOf(" ");
-    let name = input.substring(0, firstSpace).lenght;
+    let firstSpace = input.indexOf(" ");
+    let firstNames = input.substring(0, firstSpace);
+    let firstNameLength = firstNames.length;
+    let firstNameLengthString = firstNameLength.toString();
+
+    // let firstNames = input.split(" ");
+    // let leng = firstNames[0].lenght;
+    // let lenString = leng.toString();
+
+    // const firstSpace = input.indexOf(" ");
+    // let name = input.substring(0, firstSpace).lenght;
     // document.querySelector("#output").value = name;
     // let len = name.lenght;
 
-    output.innerHTML = name;
+    output.innerHTML = `${firstNames} is ${firstNameLengthString} letters`;
   }
   // den virker - done
   else if (selection == "Find_middlename_startandend_position") {
@@ -38,7 +48,7 @@ function showOutput() {
     let middleName = input.substring(firstSpace, lastSpace);
     output.innerHTML = middleName;
   }
-  // den virker hvis du i input skriver .jpg eller .png bag et navn - ellers intet udkom- done
+  // den virker juhuu- done
   else if (
     selection == "Check_if_filename_png_or_jpg" &&
     input.endsWith(".jpg") == true
@@ -49,12 +59,19 @@ function showOutput() {
     input.endsWith(".png") == true
   ) {
     output.innerHTML = "file is a png";
+  } else if (
+    selection == "Check_if_filename_png_or_jpg" &&
+    input.endsWith(".png") == false
+  ) {
+    output.innerHTML = "file is not a png og jpg";
   }
   // den virker ikke - giver op
   else if (selection == "Hide_password") {
-    let len = input.lenght;
-    let tegn = "*";
-    output.innerHTML = tegn.repeat(len);
+    let passw = " ";
+    passw = passw.padEnd(input.length, "*");
+    // let len = input.lenght;
+    // let tegn = "*";
+    output.innerHTML = passw;
   }
   // den virker - done
   else if (selection == "Make_third_character_uppercase") {
